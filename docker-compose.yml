@@ -1,0 +1,13 @@
+# By default 5080 is exposed on the host network
+version : '3.4'
+
+services :
+  antmediaserver:
+    network_mode: host
+    container_name: antmediaserver
+    image: "ghcr.io/ben-oxley/antmediabuild:main"
+    volumes:
+      - antmediadata:/usr/local/antmedia
+    restart : always
+volumes :
+  antmediadata : {}
